@@ -1,5 +1,5 @@
 import useMeasure from "react-use-measure";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useMotionValue, animate, motion } from "motion/react";
 
 function ReviewCard(props: {index: number}) {
@@ -17,17 +17,14 @@ function ReviewCard(props: {index: number}) {
 
 
 export function SliderLeft() {
-    let [ref, bounds] = useMeasure();
+    const [ref, {width}] = useMeasure();
 
     const xTranslation = useMotionValue(0);
 
     useEffect(() => {
-        let controls;
-        let finalPosition = -bounds.width /2 -16;
+        const finalPosition = width /2 -16;
 
-        console.log('bounds.width', bounds);
-
-        controls = animate(xTranslation, [0, finalPosition], {
+        const controls = animate(xTranslation, [0, finalPosition], {
             ease: "linear",
             duration: 25,
             repeat: Infinity,
@@ -36,7 +33,7 @@ export function SliderLeft() {
         })
 
         return controls.stop;
-    }, [xTranslation, bounds.width])
+    }, [xTranslation, width])
 
 
     return (

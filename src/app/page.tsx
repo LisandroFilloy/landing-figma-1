@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import Link from "next/link";
 import { Poppins } from "next/font/google";
 import { SliderLeft, SliderRight } from "../components/custom/Slider";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -15,16 +14,9 @@ const poppins = Poppins({
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: "smooth" });
   }
 };
-
-const cards = [
-  { id: 1, text: "Card 1" },
-  { id: 2, text: "Card 2" },
-  { id: 3, text: "Card 3" },
-  { id: 4, text: "Card 4" },
-];
 
 export default function Home() {
   const [burgerOpen, setBurgerOpen] = useState(false);
@@ -47,9 +39,9 @@ export default function Home() {
             <RxHamburgerMenu className="lg:hidden text-3xl "></RxHamburgerMenu>
           </div>
           <div className="hidden lg:flex justify-right text-xl gap-16">
-            <div className='cursor-pointer' onClick={() => {scrollToSection('contactMe')}}>Contact Me</div>
-            <div className='cursor-pointer' onClick={() => {scrollToSection('whatIDo')}} >What I do</div>
-            <div className='cursor-pointer' onClick={() => {scrollToSection('myProjects')}} >My Projects</div>
+            <div className="cursor-pointer" onClick={() => {scrollToSection("contactMe")}}>Contact Me</div>
+            <div className="cursor-pointer" onClick={() => {scrollToSection("whatIDo")}} >What I do</div>
+            <div className="cursor-pointer" onClick={() => {scrollToSection("myProjects")}} >My Projects</div>
           </div>
         </div>
 
@@ -57,9 +49,9 @@ export default function Home() {
           <div onClick={() => { setBurgerOpen(false) }} className="fixed inset-0 bg-black bg-opacity-70 z-50">
             <div onClick={(e) => e.stopPropagation()} className="absolute right-0 bg-white h-full w-[40%]">
               <div className="flex flex-col gap-4 p-4">
-                <div className='cursor-pointer' onClick={() => {scrollToSection('contactMe')}} >Contact Me</div>
-                <div className='cursor-pointer' onClick={() => {scrollToSection('whatIDo')}} >What I do</div>
-                <div className='cursor-pointer' onClick={() => {scrollToSection('myProjects')}} >My Projects</div>
+                <div className="cursor-pointer" onClick={() => {scrollToSection("contactMe")}} >Contact Me</div>
+                <div className="cursor-pointer" onClick={() => {scrollToSection("whatIDo")}} >What I do</div>
+                <div className="cursor-pointer" onClick={() => {scrollToSection("myProjects")}} >My Projects</div>
               </div>
             </div>
           </div>
@@ -92,7 +84,7 @@ export default function Home() {
         </div>
 
         {/* Get in touch */}
-        <div className="flex flex-col items-center min-h-screen justify-center" id='contactMe'>
+        <div className="flex flex-col items-center min-h-screen justify-center" id="contactMe">
           <div className="xl:w-[50%] flex flex-col items-center gap-8">
             <h1 className="text-5xl xl:text-7xl font-bold w-[80%] text-center">Get in touch with me</h1>
             <h3 className="text-center">I am a passionate Front-end developer currently in my third year of studying
@@ -101,7 +93,7 @@ export default function Home() {
               and would like me to bring your project to life, don't hesitate to reach out to me!</h3>
             <button className="rounded-lg p-4 border-black border-2 shadow-[4px_4px_0px_0px_black] hover:shadow-[3px_3px_0px_0px_black] transition-all w-[150px] text-sm font-semibold bg-[#FF6B6B]">Contact me</button>
           </div>
-          <img src='/react.svg' className="absolute right-0 translate-x-[400px] translate-y-40 w-200 h-100" />
+          <img src="/react.svg" className="absolute right-0 translate-x-[400px] translate-y-40 w-200 h-100" />
         </div>
 
         {/* What I do */}
@@ -121,7 +113,7 @@ export default function Home() {
               <h3 className="text-center">Dynamic app with ExpressJS and SQL</h3>
             </div>
           </div>
-          <img src='/js.svg' className="absolute right-0 translate-x-[250px] translate-y-[400px] w-200 h-100" />
+          <img src="/js.svg" className="absolute right-0 translate-x-[250px] translate-y-[400px] w-200 h-100" />
         </div>
 
         {/* My projects */}
@@ -130,31 +122,31 @@ export default function Home() {
           <h3 className="text-xl font-thin text-center">Some Projects that i’ve done with a year experiences</h3>
           <div className="mt-16 grid xl:grid-cols-3 md:grid-cols-2 md:px-0 px-8 gap-6 w-full">
             <div className="shadow-[4px_4px_0px_0px_black] rounded-lg w-full row-span-3 border-black border-2 flex flex-col gap-4 items-center justify-center p-5">
-              <h1 className='font-bold'>Lorem Ipsum</h1>
+              <h1 className="font-bold">Lorem Ipsum</h1>
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
             <div className="shadow-[4px_4px_0px_0px_black] rounded-lg w-full row-span-4 border-black border-2 flex flex-col gap-4 items-center justify-center p-5">
-              <h1 className='font-bold'>Lorem Ipsum</h1>
+              <h1 className="font-bold">Lorem Ipsum</h1>
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
             <div className="shadow-[4px_4px_0px_0px_black] rounded-lg w-full row-span-3 border-black border-2 flex flex-col gap-4 items-center justify-center p-5">
-              <h1 className='font-bold'>Lorem Ipsum</h1>
+              <h1 className="font-bold">Lorem Ipsum</h1>
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
             <div className="shadow-[4px_4px_0px_0px_black] rounded-lg w-full row-span-3 border-black border-2 flex flex-col gap-4 items-center justify-center p-5">
-              <h1 className='font-bold'>Lorem Ipsum</h1>
+              <h1 className="font-bold">Lorem Ipsum</h1>
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
             <div className="shadow-[4px_4px_0px_0px_black] rounded-lg w-full row-span-3 border-black border-2 flex flex-col gap-4 items-center justify-center p-5">
-              <h1 className='font-bold'>Lorem Ipsum</h1>
+              <h1 className="font-bold">Lorem Ipsum</h1>
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
             <div className="shadow-[4px_4px_0px_0px_black] rounded-lg w-full row-span-2 border-black border-2 flex flex-col gap-4 items-center justify-center p-5">
-              <h1 className='font-bold'>Lorem Ipsum</h1>
+              <h1 className="font-bold">Lorem Ipsum</h1>
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
           </div>
-          <img src='/nextjs.svg' className="absolute left-0 translate-x-[-250px] translate-y-[450px] h-[300px]" />
+          <img src="/nextjs.svg" className="absolute left-0 translate-x-[-250px] translate-y-[450px] h-[300px]" />
         </div>
 
         {/* Client reviews */}
