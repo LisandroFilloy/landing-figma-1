@@ -22,7 +22,7 @@ export function SliderLeft() {
     const xTranslation = useMotionValue(0);
 
     useEffect(() => {
-        const finalPosition = width /2 -16;
+        const finalPosition = -width /2 -16;
 
         const controls = animate(xTranslation, [0, finalPosition], {
             ease: "linear",
