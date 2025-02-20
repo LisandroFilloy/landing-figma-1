@@ -1,0 +1,97 @@
+import useMeasure from "react-use-measure";
+import { useEffect, useState } from "react";
+import { useMotionValue, animate, motion } from "motion/react";
+
+function ReviewCard(props: {index: number}) {
+    const {index} = props;
+    return (
+        <div className="overflow-hidden relative shadow-[4px_4px_0px_0px_black] min-w-[600px] w-[600px] rounded-lg border-black border-2 flex gap-4 items-center justify-center h-60">
+          <div className="bg-gray-200 w-full h-full flex"></div>
+          <div className="flex flex-col p-5">
+            <h1 className='font-bold'>{index} Lorem Ipsum</h1>
+            <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
+          </div>
+        </div>
+    )
+  }
+
+
+export function SliderLeft() {
+    let [ref, bounds] = useMeasure();
+
+    const xTranslation = useMotionValue(0);
+
+    useEffect(() => {
+        let controls;
+        let finalPosition = -bounds.width /2 -16;
+
+        console.log('bounds.width', bounds);
+
+        controls = animate(xTranslation, [0, finalPosition], {
+            ease: "linear",
+            duration: 25,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: 0,
+        })
+
+        return controls.stop;
+    }, [xTranslation, bounds.width])
+
+
+    return (
+        <div className="overflow-hidden">
+            <motion.div className="gap-8 flex w-max" ref={ref} style={{ x: xTranslation }}>
+                <ReviewCard index={1}/>
+                <ReviewCard index={2}/>
+                <ReviewCard index={3}/>
+                <ReviewCard index={4}/>
+                <ReviewCard index={1}/>
+                <ReviewCard index={2}/>
+                <ReviewCard index={3}/>
+                <ReviewCard index={4}/>
+            </motion.div>
+        </div>
+    )
+
+}
+
+export function SliderRight() {
+    let [ref, bounds] = useMeasure();
+
+    const xTranslation = useMotionValue(0);
+
+    useEffect(() => {
+        let controls;
+        let finalPosition = bounds.width /2 + 16;
+
+        console.log('bounds.width', bounds);
+
+        controls = animate(xTranslation, [-finalPosition, 0], {
+            ease: "linear",
+            duration: 25,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: 0,
+        })
+
+        return controls.stop;
+    }, [xTranslation, bounds.width])
+
+
+    return (
+        <div className="overflow-hidden">
+            <motion.div className="gap-8 flex w-max" ref={ref} style={{ x: xTranslation }}>
+                <ReviewCard index={1}/>
+                <ReviewCard index={2}/>
+                <ReviewCard index={3}/>
+                <ReviewCard index={4}/>
+                <ReviewCard index={1}/>
+                <ReviewCard index={2}/>
+                <ReviewCard index={3}/>
+                <ReviewCard index={4}/>
+            </motion.div>
+        </div>
+    )
+
+}
