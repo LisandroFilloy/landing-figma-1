@@ -5,9 +5,9 @@ import { useMotionValue, animate, motion } from "motion/react";
 function ReviewCard(props: {index: number}) {
     const {index} = props;
     return (
-        <div className="overflow-hidden relative shadow-[4px_4px_0px_0px_black] min-w-[600px] w-[600px] rounded-lg border-black border-2 flex gap-4 items-center justify-center h-60">
-          <div className="bg-gray-200 w-full h-full flex"></div>
-          <div className="flex flex-col p-5">
+        <div className="overflow-hidden relative shadow-[4px_4px_0px_0px_black] xl:w-[600px] md:w-[500px] w-[450px] rounded-lg border-black border-2 flex gap-4 items-center justify-center h-60">
+          <div className="bg-gray-200 flex-1 h-full flex"></div>
+          <div className="flex flex-col p-5 flex-1">
             <h1 className='font-bold'>{index} Lorem Ipsum</h1>
             <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
           </div>
