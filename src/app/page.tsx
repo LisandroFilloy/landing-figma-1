@@ -3,7 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
-import {SliderLeft, SliderRight} from "../components/custom/Slider";
+import { SliderLeft, SliderRight } from "../components/custom/Slider";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { useState } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,10 +20,12 @@ const cards = [
 ];
 
 export default function Home() {
+  const [burgerOpen, setBurgerOpen] = useState(false);
+
 
   return (
-    <div className={`bg-[#F9F5F2] min-h-screen ${poppins.className} text-black`}>
-      <div className="mx-80">
+    <div className={`relative bg-[#F9F5F2] min-h-screen ${poppins.className} text-black`}>
+      <div className="2xl:mx-80 lg:mx-40 mx-6 relative">
 
 
         {/* Navbar */}
@@ -32,12 +36,27 @@ export default function Home() {
             width={150}
             height={100}
           />
-          <div className="flex justify-right gap-16 text-xl">
+          <div onClick={() => { setBurgerOpen(true) }} className="p-2 hover:bg-gray-200 rounded-xl cursor-pointer">
+            <RxHamburgerMenu className="lg:hidden text-3xl "></RxHamburgerMenu>
+          </div>
+          <div className="hidden lg:flex justify-right text-xl gap-16">
             <Link href="#">About</Link>
             <Link href="#">What I do</Link>
             <Link href="#">My Project</Link>
           </div>
         </div>
+
+        {burgerOpen && (
+          <div onClick={() => { setBurgerOpen(false) }} className="fixed inset-0 bg-black bg-opacity-70 z-50">
+            <div onClick={(e) => e.stopPropagation()} className="absolute right-0 bg-white h-full w-[40%]">
+              <div className="flex flex-col gap-4 p-4">
+                <Link href="#">About</Link>
+                <Link href="#">What I do</Link>
+                <Link href="#">My Project</Link>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Hero Section */}
         <div className="flex items-center justify-between mt-8">
@@ -69,6 +88,7 @@ export default function Home() {
               and would like me to bring your project to life, don't hesitate to reach out to me!</h3>
             <button className="rounded-lg p-4 border-black border-2 shadow-[4px_4px_0px_0px_black] hover:shadow-[3px_3px_0px_0px_black] transition-all w-[150px] text-sm font-semibold bg-[#FF6B6B]">Contact me</button>
           </div>
+          <img src='/react.svg' className="absolute right-0 translate-x-[470px] translate-y-40 w-200 h-100" />
         </div>
 
         {/* What I do */}
@@ -88,6 +108,7 @@ export default function Home() {
               <h3>Dynamic app with ExpressJS and SQL</h3>
             </div>
           </div>
+          <img src='/js.svg' className="absolute right-0 translate-x-[360px] translate-y-80 w-200 h-100" />
         </div>
 
         {/* My projects */}
@@ -120,6 +141,7 @@ export default function Home() {
               <p className="font-thin">lorem ipsum dolor si amet adiran jamet aku ganteng aku adalah bukan jamet amar jamet aku bukan jamet a lorem ipsumd olor si amet jame </p>
             </div>
           </div>
+          <img src='/nextjs.svg' className="absolute left-0 translate-x-[-400px] translate-y-[550px] h-[300px]" />
         </div>
 
         {/* Client reviews */}
