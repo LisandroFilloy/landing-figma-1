@@ -54,7 +54,7 @@ export function SliderLeft() {
 }
 
 export function SliderRight() {
-    let [ref, {width}] = useMeasure();
+    const [ref, {width}] = useMeasure();
 
     const xTranslation = useMotionValue(0);
 
