@@ -54,17 +54,13 @@ export function SliderLeft() {
 }
 
 export function SliderRight() {
-    let [ref, bounds] = useMeasure();
+    let [ref, {width}] = useMeasure();
 
     const xTranslation = useMotionValue(0);
 
     useEffect(() => {
-        let controls;
-        let finalPosition = bounds.width /2 + 16;
-
-        console.log('bounds.width', bounds);
-
-        controls = animate(xTranslation, [-finalPosition, 0], {
+        const finalPosition = width /2 + 16;
+        const controls = animate(xTranslation, [-finalPosition, 0], {
             ease: "linear",
             duration: 25,
             repeat: Infinity,
@@ -73,7 +69,7 @@ export function SliderRight() {
         })
 
         return controls.stop;
-    }, [xTranslation, bounds.width])
+    }, [xTranslation, width])
 
 
     return (

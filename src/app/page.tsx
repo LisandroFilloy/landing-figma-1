@@ -39,9 +39,9 @@ export default function Home() {
             <RxHamburgerMenu className="lg:hidden text-3xl "></RxHamburgerMenu>
           </div>
           <div className="hidden lg:flex justify-right text-xl gap-16">
-            <div className="cursor-pointer" onClick={() => {scrollToSection("contactMe")}}>Contact Me</div>
-            <div className="cursor-pointer" onClick={() => {scrollToSection("whatIDo")}} >What I do</div>
-            <div className="cursor-pointer" onClick={() => {scrollToSection("myProjects")}} >My Projects</div>
+            <div className="cursor-pointer" onClick={() => { scrollToSection("contactMe") }}>Contact Me</div>
+            <div className="cursor-pointer" onClick={() => { scrollToSection("whatIDo") }} >What I do</div>
+            <div className="cursor-pointer" onClick={() => { scrollToSection("myProjects") }} >My Projects</div>
           </div>
         </div>
 
@@ -49,9 +49,9 @@ export default function Home() {
           <div onClick={() => { setBurgerOpen(false) }} className="fixed inset-0 bg-black bg-opacity-70 z-50">
             <div onClick={(e) => e.stopPropagation()} className="absolute right-0 bg-white h-full w-[40%]">
               <div className="flex flex-col gap-4 p-4">
-                <div className="cursor-pointer" onClick={() => {scrollToSection("contactMe")}} >Contact Me</div>
-                <div className="cursor-pointer" onClick={() => {scrollToSection("whatIDo")}} >What I do</div>
-                <div className="cursor-pointer" onClick={() => {scrollToSection("myProjects")}} >My Projects</div>
+                <div className="cursor-pointer" onClick={() => { scrollToSection("contactMe") }} >Contact Me</div>
+                <div className="cursor-pointer" onClick={() => { scrollToSection("whatIDo") }} >What I do</div>
+                <div className="cursor-pointer" onClick={() => { scrollToSection("myProjects") }} >My Projects</div>
               </div>
             </div>
           </div>
@@ -87,10 +87,13 @@ export default function Home() {
         <div className="flex flex-col items-center min-h-screen justify-center" id="contactMe">
           <div className="xl:w-[50%] flex flex-col items-center gap-8">
             <h1 className="text-5xl xl:text-7xl font-bold w-[80%] text-center">Get in touch with me</h1>
-            <h3 className="text-center">I am a passionate Front-end developer currently in my third year of studying
+            <h3 className="text-center">
+              I am a passionate Front-end developer currently in my third year of studying
               Informatics/Computer Science at Siliwangi University. Feel free to explore my
-              portfolio to see the diverse projects I've completed. If you're interested in my work
-              and would like me to bring your project to life, don't hesitate to reach out to me!</h3>
+              portfolio to see the diverse projects I&apos;ve completed. If you&apos;re interested in my work
+              and would like me to bring your project to life, don&apos;t hesitate to reach out to me!
+            </h3>
+
             <button className="rounded-lg p-4 border-black border-2 shadow-[4px_4px_0px_0px_black] hover:shadow-[3px_3px_0px_0px_black] transition-all w-[150px] text-sm font-semibold bg-[#FF6B6B]">Contact me</button>
           </div>
           <img src="/react.svg" className="absolute right-0 translate-x-[400px] translate-y-40 w-200 h-100" />
